@@ -1,6 +1,6 @@
 {
   "name": "store-emitter",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "index.js",
   "scripts": {
     "build": "documentation-readme README.md -s 'API'",
@@ -25,9 +25,8 @@
     "tape": "^4.2.2"
   },
   "dependencies": {
-    "component-emitter": "^1.2.0",
-    "eventemitter2": "^0.4.14",
     "is-plain-object": "^2.0.1",
+    "wildemitter": "github:sethvincent/wildemitter",
     "xtend": "^4.0.1"
   }
 }

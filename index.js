@@ -1,4 +1,4 @@
-var EventEmitter = require('eventemitter2').EventEmitter2
+var EventEmitter = require('wildemitter')
 var isPlainObject = require('is-plain-object')
 var extend = require('xtend')
 
