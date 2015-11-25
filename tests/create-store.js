@@ -36,3 +36,11 @@ test('missing missing modifier function fails', function (t) {
 
   t.end()
 })
+
+test('initial state', function (t) {
+  var store = createStore(function () {}, { example: true })
+  var state = store.initialState()
+  t.ok(state)
+  t.ok(state.example)
+  t.end()
+})

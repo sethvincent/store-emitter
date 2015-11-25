@@ -25,8 +25,10 @@ module.exports = function createStore (modifier, initialState) {
     delimiter: ':'
   })
 
+  initialState = initialState || {}
   var isEmitting = false
-  var state = initialState || {}
+  var state = extend(initialState)
+  store.initialState = getInitialState
   store.emit = store
   store.on = on
   return store
@@ -62,6 +64,16 @@ module.exports = function createStore (modifier, initialState) {
 
     emitter.emit(action.type, action, newState, oldState)
     isEmitting = false
+  }
+
+  /**
+  * Get the initial state of the store
+  * @name store.initialState
+  * @example
+  * var state = store.initialState()
+  */
+  function getInitialState () {
+    return initialState
   }
 
   /**

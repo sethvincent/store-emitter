@@ -69,6 +69,16 @@ store({
 })
 ```
 
+### store.initialState
+
+Get the initial state of the store
+
+**Examples**
+
+```javascript
+var state = store.initialState()
+```
+
 ### store.on
 
 Listen to changes to the store
