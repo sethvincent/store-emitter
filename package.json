@@ -1,13 +1,13 @@
 {
   "name": "store-emitter",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "main": "index.js",
   "scripts": {
     "build": "documentation-readme README.md -s 'API'",
     "test": "standard && tape tests/*.js | tap-spec"
   },
   "author": "sethvincent <sethvincent@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sethvincent/store-emitter.git"
@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "is-plain-object": "^2.0.1",
-    "wildemitter": "github:sethvincent/wildemitter",
+    "namespace-emitter": "^1.0.0",
     "xtend": "^4.0.1"
   }
 }

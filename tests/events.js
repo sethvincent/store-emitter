@@ -26,7 +26,7 @@ test('listen to namespaced events', function (t) {
   })
 
   var i = 0
-  store.on('example:*', function (action, state, oldState) {
+  store.on('example', function (action, state, oldState) {
     t.ok(action)
     i++
   })

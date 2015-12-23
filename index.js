@@ -1,4 +1,4 @@
-var EventEmitter = require('wildemitter')
+var createEmitter = require('namespace-emitter')
 var isPlainObject = require('is-plain-object')
 var extend = require('xtend')
 
@@ -20,7 +20,7 @@ module.exports = function createStore (modifier, initialState) {
     throw new Error('first argument must be a function')
   }
 
-  var emitter = new EventEmitter({
+  var emitter = createEmitter({
     wildcard: true,
     delimiter: ':'
   })
@@ -82,6 +82,14 @@ module.exports = function createStore (modifier, initialState) {
   * @param {string} event – can be `data` or any action type
   * @example
   * store.on('*', function (action, state, oldState) {
+  *
+  * })
+  *
+  * store.on('article', function (action, state, oldState) {
+  *
+  * })
+  *
+  * store.on('article:delete', function (action, state, oldState) {
   *
   * })
   */
