@@ -96,6 +96,10 @@ store.on('*', function (action, state, oldState) {
 })
 ```
 
+## See also
+- [virtual-app](https://github.com/sethvincent/virtual-app)
+- [namespace-emitter](https://github.com/sethvincent/namespace-emitter)
+
 ## LICENSE
 
 [MIT](LICENSE.md)
