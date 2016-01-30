@@ -20,11 +20,7 @@ module.exports = function createStore (modifier, initialState) {
     throw new Error('first argument must be a function')
   }
 
-  var emitter = createEmitter({
-    wildcard: true,
-    delimiter: ':'
-  })
-
+  var emitter = createEmitter()
   initialState = initialState || {}
   var isEmitting = false
   var state = extend(initialState)
