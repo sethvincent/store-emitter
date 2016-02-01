@@ -25,6 +25,7 @@ module.exports = function createStore (modifier, initialState) {
   var isEmitting = false
   var state = extend(initialState)
   store.initialState = getInitialState
+  store.getState = getState
   store.emit = store
   store.on = on
   return store
@@ -70,6 +71,16 @@ module.exports = function createStore (modifier, initialState) {
   */
   function getInitialState () {
     return initialState
+  }
+
+  /**
+   * Get the current state of the store
+   * @name store.getState
+   * @example
+   * var state = store.getState()
+   */
+  function getState () {
+    return state
   }
 
   /**
