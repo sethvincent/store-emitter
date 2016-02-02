@@ -44,3 +44,22 @@ test('initial state', function (t) {
   t.ok(state.example)
   t.end()
 })
+
+test('get state', function (t) {
+  function modifier (action, state) {
+    if (action.type === 'example') {
+      return { example: action.example }
+    }
+  }
+
+  var store = createStore(modifier, { example: true })
+
+  store.on('example', function () {
+    var state = store.getState()
+    t.ok(state)
+    t.equal(state.example, false)
+  })
+
+  store({ type: 'example', example: false })
+  t.end()
+})
