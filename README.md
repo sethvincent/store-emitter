@@ -69,6 +69,16 @@ store({
 })
 ```
 
+### store.getState
+
+Get the current state of the store
+
+**Examples**
+
+```javascript
+var state = store.getState()
+```
+
 ### store.initialState
 
 Get the initial state of the store
@@ -94,11 +104,20 @@ Listen to changes to the store
 store.on('*', function (action, state, oldState) {
 
 })
+
+store.on('article', function (action, state, oldState) {
+
+})
+
+store.on('article:delete', function (action, state, oldState) {
+
+})
 ```
 
 ## See also
-- [virtual-app](https://github.com/sethvincent/virtual-app)
-- [namespace-emitter](https://github.com/sethvincent/namespace-emitter)
+
+-   [virtual-app](https://github.com/sethvincent/virtual-app)
+-   [namespace-emitter](https://github.com/sethvincent/namespace-emitter)
 
 ## LICENSE
 
