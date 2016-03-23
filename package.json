@@ -1,6 +1,6 @@
 {
   "name": "store-emitter",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "main": "index.js",
   "scripts": {
     "build": "documentation-readme README.md -s 'API'",
