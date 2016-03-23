@@ -28,6 +28,8 @@ module.exports = function createStore (modifier, initialState) {
   store.getState = getState
   store.emit = store
   store.on = on
+  store.once = once
+  store.off = off
   return store
 
   /**
@@ -84,9 +86,10 @@ module.exports = function createStore (modifier, initialState) {
   }
 
   /**
-  * Listen to changes to the store
+  * Listen for changes to the store
   * @name store.on
-  * @param {string} event – can be `data` or any action type
+  * @param {string} event – an action type
+  * @param {Function} callback
   * @example
   * store.on('*', function (action, state, oldState) {
   *
@@ -102,5 +105,33 @@ module.exports = function createStore (modifier, initialState) {
   */
   function on (event, callback) {
     emitter.on(event, callback)
+  }
+
+  /**
+  * Listen for a single change to the store
+  * @name store.once
+  * @param {string} event – an action type
+  * @param {Function} callback
+  * @example
+  * store.once('article', function (action, state, oldState) {
+  *
+  * })
+  */
+  function once (event, callback) {
+    emitter.once(event, callback)
+  }
+
+  /**
+  * Stop listening for changes to the store. Passing just the action type will remove all listeners for that action type.
+  * @name store.off
+  * @param {string} event – an action type
+  * @param {Function} [callback] – optional callback
+  * @example
+  * store.off('article', function (action, state, oldState) {
+  *
+  * })
+  */
+  function off (event, callback) {
+    emitter.off(event, callback)
   }
 }

@@ -89,14 +89,31 @@ Get the initial state of the store
 var state = store.initialState()
 ```
 
-### store.on
+### store.off
 
-Listen to changes to the store
+Stop listening for changes to the store. Passing just the action type will remove all listeners for that action type.
 
 **Parameters**
 
--   `event` **string** – can be `data` or any action type
--   `callback`  
+-   `event` **string** – an action type
+-   `callback` **[Function]** – optional callback
+
+**Examples**
+
+```javascript
+store.off('article', function (action, state, oldState) {
+
+})
+```
+
+### store.on
+
+Listen for changes to the store
+
+**Parameters**
+
+-   `event` **string** – an action type
+-   `callback` **Function** 
 
 **Examples**
 
@@ -110,6 +127,23 @@ store.on('article', function (action, state, oldState) {
 })
 
 store.on('article:delete', function (action, state, oldState) {
+
+})
+```
+
+### store.once
+
+Listen for a single change to the store
+
+**Parameters**
+
+-   `event` **string** – an action type
+-   `callback` **Function** 
+
+**Examples**
+
+```javascript
+store.once('article', function (action, state, oldState) {
 
 })
 ```
