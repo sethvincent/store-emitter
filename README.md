@@ -150,8 +150,10 @@ store.once('article', function (action, state, oldState) {
 
 ## See also
 
--   [virtual-app](https://github.com/sethvincent/virtual-app)
--   [namespace-emitter](https://github.com/sethvincent/namespace-emitter)
+-   [virtual-app](https://github.com/sethvincent/virtual-app) – uses store-emitter as a dependency
+-   [namespace-emitter](https://github.com/sethvincent/namespace-emitter) – is a dependency of store-emitter
+-   [yo-yo.js](https://github.com/maxogden/yo-yo) – a library for building UI components that works well with store-emitter
+-   [minidux](https://github.com/freeman-lab/minidux) – a small alternative to redux that means to be a drop-in replacement
 
 ## LICENSE
 
