@@ -23,7 +23,7 @@ store.on('*', function (action, state, oldState) {
 
 store.on('example', function (action, state, oldState) {
   t.ok(state.example)
-  t.notOk(previous.example)
+  t.notOk(oldState.example)
 })
 
 store({ type: 'example' })
